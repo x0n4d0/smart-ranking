@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    image: smart_ranking_api
+    build: .
+    tty: true
+    container_name: smart_ranking_api
+    volumes:
+      - .:/smart-ranking-api
+      - ./node_modules:/smart-ranking-api/node_modules
+    ports:
+      - 8080:8080
+    command: bash -c "npm run start:dev"
