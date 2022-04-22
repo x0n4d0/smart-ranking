@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  db:
+    image: mongo:5.0
+    container_name: smart_ranking_mongodb
+    ports:
+      - 27017:27017
+    restart: always
+
   api:
     image: smart_ranking_api
     build: .
